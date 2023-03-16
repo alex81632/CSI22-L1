@@ -17,18 +17,34 @@ def espiral(t, tamanho, quantidade, passo, angulo):
         tamanho += passo
 
 
-
 if __name__ == "__main__":
     # criar a tartaruga
     tess = turtle.Turtle()
 
-    quatidade = 30
+    quatidade = 14
     tamanho = 1
     passo = 3
-    angulo = 92
+    angulo = 90
 
-    # desenhar a espiral
-    espiral(tess, tamanho, quatidade, passo, angulo)    
+    # ir para tras para dar espaço
+    tess.penup()
+    tess.backward(100)
+    tess.pendown()
+
+    # desenhar a espiral sem rotação
+    espiral(tess, tamanho, quatidade, passo, angulo)
+
+    # ir para frente para dar espaço
+
+    tess.penup()
+    tess.forward(300)
+    tess.left(90)
+    tess.forward(100)
+    tess.right(90)
+    tess.pendown()
+
+    # desenhar a espiral com rotação
+    espiral(tess, tamanho, quatidade, passo, angulo+2)
 
     # terminar
     turtle.mainloop()
